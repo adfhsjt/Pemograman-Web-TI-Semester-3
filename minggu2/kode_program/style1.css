@@ -1,0 +1,55 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+    line-height: 1.65;
+    padding-bottom: 1000px;
+}
+
+/*Latihan 1*/
+.container-satu{
+    width: 800px;
+    margin: 50px;
+    background: url("img/pic.png");
+    padding: 20px;
+    box-sizing: border-box;
+    display : grid;
+    grid-template-areas: ".sidebar-satu .kolom-utama sidebar-dua";
+    border: 5px solid #333;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.kolom-utama{
+    grid-area: kolom-utama;
+    display: order;
+}
+
+.sidebar-satu{
+    grid-area: sidebar-satu;
+    width: 150px;
+    background-color: lightgrey;
+    display: order;
+    border: 5px solid #333;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.sidebar-dua{
+    width: 150px;
+    background-color: lightcyan;
+    grid-area: sidebar-dua;
+    display: order;
+    border: 5px solid #333;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+
+
