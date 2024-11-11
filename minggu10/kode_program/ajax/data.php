@@ -13,8 +13,7 @@
         <?php
         include 'koneksi.php';
         $no = 1;
-        $query =
-            "SELECT * FROM anggota ORDER BY id DESC";
+        $query = "SELECT * FROM anggota ORDER BY id DESC";
         $sql = $db1->prepare($query);
         $sql->execute();
         $res1 = $sql->get_result();
@@ -85,5 +84,29 @@
             }
         });
     });
+
+    $(document).on('click', '.hapus_data', function(){
+        var id = $(this).attr('id');
+        $.ajax({
+            type: "POST",
+            url: "hapus_data.php",
+            data: {id: id},
+            dataType: "json",
+            success: function(response){
+                document.getElementById("id").value = "";
+                document.getElementById("nama").value = "";
+                document.getElementById("alamat").value = "";
+                document.getElementById("no_telp").value = "";
+                document.getElementById("jenkel1").checked = false;
+                document.getElementById("jenkel2").checked = false;
+                $('.data').load('data.php');
+            },
+            error: function(response){
+                console.log(response.responseText);
+            }
+        });
+    });
+
+
 
 </script>
